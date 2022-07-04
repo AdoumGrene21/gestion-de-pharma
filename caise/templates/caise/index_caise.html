@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+</head>
+
+<body class="container">
+    {% block Content %} 
+    <div class="card">
+      
+        <div class="card-header">
+            <h4>Caisse de facturation</h4>
+        </div>
+        <blockquote class="blockquote p-0">
+        <div class="card-body p-4">
+          
+            <div class="row ">
+              <div class="col-md-4 list-group">
+
+                <div class="form-card">
+                  <input class="form-control" type="text" name="medicament" placeholder="Recherche le médi..."/>
+                </div>
+
+                <hr>
+                <div id="medicaments">
+                  <div id="medicament">
+                  
+
+                  </div>
+                </div>
+                
+               
+
+
+              </div>
+              <div class="col-md-8 list-group">
+                 <div class="list-group-item list-group-item">
+                  <fieldset>
+                    <div class="form-card">
+                        <h5 class="fs-title">Medicament</h5>
+                        <hr>
+                        <div class="row">
+                            
+                            <div class="col-md-6">
+                              <label class="pay">Nom commercial</label>
+                              <input class="form-control" type="text" name="nom_commercial" id="nom_commercial" placeholder="" disabled />
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <label class="pay">Date de peremption</label>
+                                <input class="form-control" type="text" name="date_peremption" id="date_peremption" placeholder="" disabled />
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="pay">Qte demandé</label>
+                                <input class="form-control" type="number" name="telephone" placeholder=""/>
+                            </div>
+                            <div class="col-md-4">
+                              <label class="pay">Qte en stock</label>
+                              <input class="form-control" type="text" name="quantite" id="quantite" placeholder="" disabled />
+                            </div>
+                            <div class="col-md-4">
+                              <label class="pay">Prix Unitaire</label>
+                              <input class="form-control" type="text" name="prix_unitaire" id="prix_unitaire" placeholder="" disabled />
+                            </div>
+                            
+                        </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                      <div class="form-card">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <input type="button" name="previous" class="btn btn-primary m-1 mt-4" value="Plus (+)"/>
+                            <input type="button" name="next" class="btn btn-success m-1 mt-4" value="Valider"/>
+                          </div>
+
+                          <div class="col-md-8">
+                            <label class="pay">Somme total</label>
+                                <input class="form-control" type="text" name="email" placeholder=""/>
+                          </div>
+                        </div>
+                      </div>              
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              
+              <div class="col-md-4 list-group">
+               
+                <div class="list-group-item list-group-item">
+                  <div class="row mt-1">
+                    <h5 class="fs-title">Filtre la recherche</h5>
+                        <hr>
+                    <form class="col-md-12">
+                      {%  csrf_token %}
+
+                     
+
+                      <div class="ui selection dropdown" id="categories">
+                        <input type="hidden" name="categorie">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">All categories</div>
+                        <div class="menu" id="c">
+                          
+                        </div>
+                      </div>
+
+                      <div class="ui selection dropdown" id="souscategories">
+                        <input type="hidden" name="souscategorie">
+                        <i class="dropdown icon"></i>
+                        <div class="default text" id="souscategorie-text">All sous categories</div>
+                        <div class="menu" id="s">
+                          
+                        </div>
+                      </div>
+
+                      <div class="ui selection dropdown" id="dcis">
+                        <input type="hidden" name="dci">
+                        <i class="dropdown icon"></i>
+                        <div class="default text" id="dci-text">All sous categories</div>
+                        <div class="menu" id="d">
+                          
+                        </div>
+                      </div>
+
+                      
+
+                     
+
+                    </form>
+                  </div>
+
+                 
+                </div>
+              </div>
+
+
+              <div class="col-md-8 list-group bg-light">
+                 <div class="list-group-item list-group-item">
+                  <div class="row">
+                    <div class="col-md-12 list-group">
+
+                      
+                      <table class="table">   
+                        <thead>
+                          <th scope="row">#</th>
+                          <th scope="row">Nom commercial</th>
+                          <th scope="row">DCI</th>
+                          <th scope="row">Prix U</th>
+                          <th scope="row">Action</th>
+
+
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td >0202 </td>
+                          <td >Para </td>  
+                          <td >Paracetamol </td>
+                          <td >256 </td>
+                          <td ><button class="btn btn-danger" type="button">X</button></td>
+
+                        </tr>
+                        <tr>
+                          <td >0202 </td>
+                          <td >Para </td>  
+                          <td >Paracetamol </td>
+                          <td >256 </td>
+                          <td ><button class="btn btn-danger" type="button">X</button></td>
+
+
+                        </tr>
+                        <tr>
+                          <td >0202 </td>
+                          <td >Para </td>  
+                          <td >Paracetamol </td>
+                          <td >256 </td>
+                          <td ><button class="btn btn-danger" type="button">X</button></td>
+
+
+                        </tr>
+                        <tr>
+                          <td >0202 </td>
+                          <td >Para </td>  
+                          <td >Paracetamol </td>
+                          <td >256 </td>
+                          <td ><button class="btn btn-danger" type="button">X</button></td>
+
+
+                        </tr>
+                        </tbody>
+                        </table>				
+                        
+                    </div>
+                     
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </blockquote>
+      </div>
+    {% endblock Content %}
+   
+</body>
